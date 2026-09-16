@@ -1,147 +1,141 @@
 /*
-  SERENSITE PS4 CUSTOM SKIN
-  Responsive through Gamepad Viewer's sc= parameter
+  SERENSITE PS4 CONTROLLER SKIN
+  Gamepad Viewer custom CSS
 */
 
-/* Main controller */
+/* Main controller artwork */
 .controller.custom {
     position: relative;
-    width: 1024px;
-    height: 633px;
+    width: 784px;
+    height: 558px;
     margin: 0;
     padding: 0;
     background-image: url("https://raw.githubusercontent.com/loveshha15-del/serensite-skin/refs/heads/main/serensite-controller.png");
-    background-position: center;
     background-repeat: no-repeat;
-    background-size: 1024px 633px;
+    background-position: center;
+    background-size: 100% 100%;
     background-color: transparent;
 }
 
-/* Hide the artwork if disconnected controls are being displayed */
-.controller.custom.disconnected div {
-    display: none;
+/* Keep artwork visible when disconnected */
+.custom.disconnected {
+    background-image: url("https://raw.githubusercontent.com/loveshha15-del/serensite-skin/refs/heads/main/serensite-controller.png");
 }
 
-/* Make the control groups sit over the artwork */
-.custom .triggers,
-.custom .bumpers,
-.custom .arrows,
-.custom .abxy,
-.custom .sticks,
-.custom .dpad {
-    position: absolute;
+/* Hide live controls while disconnected */
+.custom.disconnected div {
+    display: none;
 }
 
 /* ---------------- TRIGGERS ---------------- */
 
 .custom .triggers {
     position: absolute;
+    width: 586px;
+    height: 65px;
+    left: 99px;
     top: 0;
-    left: 0;
-    width: 1024px;
-    height: 105px;
 }
 
 .custom .trigger {
-    position: absolute;
-    top: 0;
-    width: 145px;
-    height: 100px;
-    opacity: 0;
-    background: transparent !important;
-}
-
-.custom .trigger.left {
-    left: 145px;
-}
-
-.custom .trigger.right {
-    right: 145px;
-}
-
-.custom .trigger.pressed {
-    opacity: 0.65;
-    background: rgba(255, 80, 190, 0.7) !important;
-    box-shadow: 0 0 20px rgba(255, 80, 190, 0.9);
-}
-
-/* ---------------- BUMPERS ---------------- */
-
-.custom .bumpers {
-    top: 105px;
-    left: 0;
-    width: 1024px;
-    height: 80px;
-}
-
-.custom .bumper {
-    position: absolute;
-    width: 90px;
+    width: 86px;
     height: 65px;
     opacity: 0;
     background: transparent !important;
 }
 
+.custom .trigger.left {
+    float: left;
+}
+
+.custom .trigger.right {
+    float: right;
+}
+
+.custom .trigger.pressed {
+    opacity: 0.7;
+    background: rgba(255, 80, 190, 0.7) !important;
+    box-shadow: 0 0 18px rgba(255, 80, 190, 0.9);
+}
+
+/* ---------------- BUMPERS ---------------- */
+
+.custom .bumpers {
+    position: absolute;
+    width: 586px;
+    height: 28px;
+    left: 99px;
+    top: 72px;
+}
+
+.custom .bumper {
+    width: 89px;
+    height: 28px;
+    opacity: 0;
+    background: transparent !important;
+}
+
 .custom .bumper.left {
-    left: 285px;
+    float: left;
 }
 
 .custom .bumper.right {
-    right: 285px;
+    float: right;
 }
 
 .custom .bumper.pressed {
-    opacity: 0.65;
+    opacity: 0.7;
     background: rgba(255, 80, 190, 0.7) !important;
-    box-shadow: 0 0 20px rgba(255, 80, 190, 0.9);
+    box-shadow: 0 0 18px rgba(255, 80, 190, 0.9);
 }
 
 /* ---------------- SHARE / OPTIONS ---------------- */
 
 .custom .arrows {
-    top: 105px;
-    left: 0;
-    width: 1024px;
-    height: 100px;
+    position: absolute;
+    width: 205px;
+    height: 40px;
+    top: 214px;
+    left: 291px;
 }
 
 .custom .back,
 .custom .start {
-    position: absolute;
-    width: 65px;
-    height: 85px;
+    width: 38px;
+    height: 40px;
     opacity: 0;
     background: transparent !important;
 }
 
 .custom .back {
-    left: 280px;
+    float: left;
 }
 
 .custom .start {
-    right: 280px;
+    float: right;
 }
 
 .custom .back.pressed,
 .custom .start.pressed {
-    opacity: 0.65;
+    opacity: 0.7;
     background: rgba(255, 80, 190, 0.7) !important;
-    box-shadow: 0 0 20px rgba(255, 80, 190, 0.9);
+    box-shadow: 0 0 18px rgba(255, 80, 190, 0.9);
 }
 
 /* ---------------- FACE BUTTONS ---------------- */
 
 .custom .abxy {
-    top: 145px;
-    left: 0;
-    width: 1024px;
-    height: 250px;
+    position: absolute;
+    width: 204px;
+    height: 205px;
+    top: 156px;
+    left: 538px;
 }
 
 .custom .button {
     position: absolute;
-    width: 80px;
-    height: 80px;
+    width: 62px;
+    height: 62px;
     border-radius: 50%;
     opacity: 0;
     background: transparent !important;
@@ -152,61 +146,114 @@
     background: rgba(255, 80, 190, 0.7) !important;
     box-shadow:
         0 0 18px rgba(255, 80, 190, 0.95),
-        inset 0 0 12px rgba(255, 255, 255, 0.6);
+        inset 0 0 12px rgba(255, 255, 255, 0.5);
 }
 
 /* Cross */
 .custom .a {
-    left: 744px;
-    top: 145px;
+    left: 71px;
+    top: 142px;
 }
 
 /* Circle */
 .custom .b {
-    left: 820px;
-    top: 70px;
+    right: 0;
+    top: 71px;
 }
 
 /* Square */
 .custom .x {
-    left: 668px;
-    top: 70px;
+    left: 0;
+    top: 71px;
 }
 
 /* Triangle */
 .custom .y {
-    left: 744px;
+    left: 71px;
     top: 0;
+}
+
+/* ---------------- ANALOG STICKS ---------------- */
+
+/*
+  Gamepad Viewer controls stick movement through the
+  stick elements. Do not override transform here.
+*/
+
+.custom .sticks {
+    position: absolute;
+    width: 364px;
+    height: 105px;
+    top: 328px;
+    left: 210px;
+    z-index: 5;
+}
+
+.custom .stick {
+    position: absolute;
+    width: 72px;
+    height: 72px;
+    border: 3px solid rgba(255, 105, 200, 0.95);
+    border-radius: 50%;
+    background: rgba(255, 105, 200, 0.3) !important;
+    box-shadow:
+        0 0 12px rgba(255, 105, 200, 0.8),
+        inset 0 0 10px rgba(255, 255, 255, 0.35);
+    opacity: 1 !important;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Left stick */
+.custom .stick.left {
+    top: 16px;
+    left: 0;
+}
+
+/* Right stick */
+.custom .stick.right {
+    top: 16px;
+    left: 292px;
+}
+
+/* Stick pressed state */
+.custom .stick.pressed {
+    background: rgba(255, 70, 190, 0.65) !important;
+    border-color: white;
+    box-shadow:
+        0 0 20px rgba(255, 70, 190, 1),
+        inset 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
 /* ---------------- D-PAD ---------------- */
 
 .custom .dpad {
-    top: 145px;
-    left: 0;
-    width: 1024px;
-    height: 250px;
+    position: absolute;
+    width: 140px;
+    height: 132px;
+    top: 192px;
+    left: 74px;
 }
 
 .custom .face {
     position: absolute;
     opacity: 0;
     background: transparent !important;
-    border: none !important;
+    border: 0 !important;
 }
 
 .custom .face.up,
 .custom .face.down {
-    left: 162px;
-    width: 75px;
-    height: 75px;
+    width: 38px;
+    height: 52px;
+    left: 50px;
 }
 
 .custom .face.left,
 .custom .face.right {
-    top: 75px;
-    width: 75px;
-    height: 75px;
+    width: 52px;
+    height: 38px;
+    top: 47px;
 }
 
 .custom .face.up {
@@ -214,79 +261,24 @@
 }
 
 .custom .face.down {
-    top: 150px;
+    top: 79px;
 }
 
 .custom .face.left {
-    left: 87px;
+    left: 0;
 }
 
 .custom .face.right {
-    left: 237px;
+    right: 0;
 }
 
 .custom .face.pressed {
     opacity: 0.7;
     background: rgba(255, 80, 190, 0.7) !important;
-    box-shadow: 0 0 18px rgba(255, 80, 190, 0.95);
+    box-shadow: 0 0 18px rgba(255, 80, 190, 0.9);
 }
 
-/* ---------------- JOYSTICKS ---------------- */
-
-/*
-  These must remain visible.
-  Gamepad Viewer moves the .stick elements automatically
-  when the physical analogue sticks move.
-*/
-
-.custom .sticks {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 1024px;
-    height: 633px;
-    pointer-events: none;
-}
-
-.custom .stick {
-    position: absolute;
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-    opacity: 1 !important;
-    background: rgba(255, 105, 200, 0.28) !important;
-    border: 3px solid rgba(255, 105, 200, 0.9);
-    box-shadow:
-        0 0 10px rgba(255, 105, 200, 0.8),
-        inset 0 0 10px rgba(255, 255, 255, 0.35);
-    z-index: 10;
-    pointer-events: none;
-}
-
-/* Left joystick starting position */
-.custom .stick.left {
-    left: 318px;
-    top: 333px;
-}
-
-/* Right joystick starting position */
-.custom .stick.right {
-    left: 634px;
-    top: 333px;
-}
-
-/* Stronger highlight while pressing the sticks */
-.custom .stick.pressed {
-    opacity: 1 !important;
-    background: rgba(255, 70, 190, 0.55) !important;
-    border-color: #ffffff;
-    box-shadow:
-        0 0 18px rgba(255, 70, 190, 1),
-        inset 0 0 15px rgba(255, 255, 255, 0.5);
-}
-
-/* ---------------- PAGE TRANSPARENCY ---------------- */
-
+/* Transparent page */
 html,
 body {
     margin: 0 !important;
