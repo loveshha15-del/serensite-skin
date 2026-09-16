@@ -1,77 +1,312 @@
-/* Serensite responsive PS4 controller skin */
+/*
+    SERENSITE PS4 CONTROLLER SKIN
+    Gamepad Viewer custom skin
+    Artwork hosted on GitHub
+*/
+
+/* Main controller artwork */
+.controller.custom {
+    position: relative;
+    width: 1024px;
+    height: 633px;
+    margin: 0;
+    padding: 0;
+    background-image: url("https://raw.githubusercontent.com/loveshha15-del/serensite-skin/refs/heads/main/serensite-controller.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color: transparent;
+    overflow: visible;
+}
+
+/* Transparent background when disconnected */
+.controller.custom.disconnected {
+    background-image: url("https://raw.githubusercontent.com/loveshha15-del/serensite-skin/refs/heads/main/serensite-controller.png");
+}
+
+.controller.custom.disconnected > div {
+    display: none;
+}
+
+/* Make every live control use absolute positioning */
+.controller.custom > div,
+.controller.custom .triggers,
+.controller.custom .bumpers,
+.controller.custom .arrows,
+.controller.custom .abxy,
+.controller.custom .sticks,
+.controller.custom .dpad {
+    position: absolute;
+}
+
+/* Hide live controls normally because the artwork already contains the buttons */
+.controller.custom .trigger,
+.controller.custom .bumper,
+.controller.custom .button,
+.controller.custom .face,
+.controller.custom .stick,
+.controller.custom .back,
+.controller.custom .start {
+    background-image: none !important;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ---------------- TRIGGERS ---------------- */
+
+.controller.custom .triggers {
+    top: 0;
+    left: 0;
+    width: 1024px;
+    height: 115px;
+}
+
+.controller.custom .trigger {
+    position: absolute;
+    top: 0;
+    width: 170px;
+    height: 115px;
+    border-radius: 45%;
+}
+
+/* L2 */
+.controller.custom .trigger.left {
+    left: 125px;
+}
+
+/* R2 */
+.controller.custom .trigger.right {
+    right: 125px;
+}
+
+/* Trigger pressed effect */
+.controller.custom .trigger.pressed {
+    opacity: 0.45;
+    background: rgba(255, 105, 190, 0.65) !important;
+    box-shadow: 0 0 25px rgba(255, 105, 190, 0.9);
+}
+
+/* ---------------- BUMPERS ---------------- */
+
+.controller.custom .bumpers {
+    top: 105px;
+    left: 0;
+    width: 1024px;
+    height: 100px;
+}
+
+.controller.custom .bumper {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 85px;
+    border-radius: 35%;
+}
+
+/* L1 */
+.controller.custom .bumper.left {
+    left: 270px;
+}
+
+/* R1 */
+.controller.custom .bumper.right {
+    right: 270px;
+}
+
+.controller.custom .bumper.pressed {
+    opacity: 0.5;
+    background: rgba(255, 105, 190, 0.65) !important;
+    box-shadow: 0 0 20px rgba(255, 105, 190, 0.9);
+}
+
+/* ---------------- SHARE / OPTIONS ---------------- */
+
+.controller.custom .arrows {
+    top: 120px;
+    left: 0;
+    width: 1024px;
+    height: 100px;
+}
+
+.controller.custom .back,
+.controller.custom .start {
+    position: absolute;
+    width: 75px;
+    height: 100px;
+    border-radius: 35%;
+}
+
+/* Share */
+.controller.custom .back {
+    left: 275px;
+}
+
+/* Options */
+.controller.custom .start {
+    right: 275px;
+}
+
+.controller.custom .back.pressed,
+.controller.custom .start.pressed {
+    opacity: 0.5;
+    background: rgba(255, 105, 190, 0.65) !important;
+    box-shadow: 0 0 20px rgba(255, 105, 190, 0.9);
+}
+
+/* ---------------- FACE BUTTONS ---------------- */
+
+.controller.custom .abxy {
+    top: 145px;
+    left: 0;
+    width: 1024px;
+    height: 250px;
+}
+
+.controller.custom .button {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+/*
+    Gamepad Viewer naming:
+    A = Cross
+    B = Circle
+    X = Square
+    Y = Triangle
+*/
+
+/* Cross - bottom */
+.controller.custom .a {
+    left: 740px;
+    top: 145px;
+}
+
+/* Circle - right */
+.controller.custom .b {
+    left: 815px;
+    top: 70px;
+}
+
+/* Square - left */
+.controller.custom .x {
+    left: 665px;
+    top: 70px;
+}
+
+/* Triangle - top */
+.controller.custom .y {
+    left: 740px;
+    top: 0;
+}
+
+.controller.custom .button.pressed {
+    opacity: 0.5;
+    background: rgba(255, 105, 190, 0.7) !important;
+    box-shadow:
+        0 0 15px rgba(255, 105, 190, 0.9),
+        inset 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+/* ---------------- ANALOG STICKS ---------------- */
+
+.controller.custom .sticks {
+    top: 285px;
+    left: 0;
+    width: 1024px;
+    height: 180px;
+}
+
+.controller.custom .stick {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+/* Left stick */
+.controller.custom .stick.left {
+    left: 275px;
+    top: 0;
+}
+
+/* Right stick */
+.controller.custom .stick.right {
+    right: 275px;
+    top: 0;
+}
+
+/* Show a subtle ring when sticks are pressed */
+.controller.custom .stick.pressed {
+    opacity: 0.35;
+    background: rgba(255, 105, 190, 0.55) !important;
+    box-shadow: 0 0 25px rgba(255, 105, 190, 0.8);
+}
+
+/* ---------------- D-PAD ---------------- */
+
+.controller.custom .dpad {
+    top: 145px;
+    left: 0;
+    width: 1024px;
+    height: 250px;
+}
+
+.controller.custom .face {
+    position: absolute;
+    background-image: none !important;
+    background-color: transparent;
+    border: 0;
+    opacity: 0;
+}
+
+/* D-pad positions */
+.controller.custom .face.up,
+.controller.custom .face.down {
+    width: 100px;
+    height: 100px;
+    left: 160px;
+}
+
+.controller.custom .face.left,
+.controller.custom .face.right {
+    width: 100px;
+    height: 100px;
+    top: 75px;
+}
+
+.controller.custom .face.up {
+    top: 0;
+}
+
+.controller.custom .face.down {
+    top: 150px;
+}
+
+.controller.custom .face.left {
+    left: 85px;
+}
+
+.controller.custom .face.right {
+    left: 235px;
+}
+
+.controller.custom .face.pressed {
+    opacity: 0.5;
+    background: rgba(255, 105, 190, 0.65) !important;
+    box-shadow: 0 0 20px rgba(255, 105, 190, 0.9);
+}
+
+/* ---------------- TRANSPARENCY ---------------- */
 
 html,
 body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+    margin: 0 !important;
+    padding: 0 !important;
     background: transparent !important;
-}
-
-/* Keep the viewer responsive */
-.gamepad {
-    position: relative !important;
-    width: 100% !important;
-    height: auto !important;
-    max-width: 100vw !important;
-    max-height: 100vh !important;
-    aspect-ratio: 1.6 / 1 !important;
-    transform: none !important;
-    background: transparent !important;
-}
-
-/* Controller background */
-.gamepad::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("https://raw.githubusercontent.com/loveshha15-del/serensite-skin/refs/heads/main/serensite-controller.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    pointer-events: none;
-    z-index: 0;
-}
-
-/* Keep controller controls above the image */
-.gamepad > * {
-    position: absolute;
-    z-index: 2;
-}
-
-/* Hide the default controller artwork */
-.controller,
-.controller-body,
-.controller-background,
-.base,
-.ps4,
-.dualshock4 {
-    background: transparent !important;
-    background-image: none !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-/* Make controls scale with the viewer */
-button,
-.stick,
-.dpad,
-.face,
-.shoulder,
-.trigger,
-.touchpad,
-.start,
-.select,
-.options,
-.share,
-.ps,
-.analog {
-    transform-origin: center center;
-}
-
-/* Prevent unwanted scrollbars */
-* {
-    box-sizing: border-box;
+    overflow: hidden !important;
 }
